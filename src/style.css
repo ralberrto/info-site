@@ -1,0 +1,31 @@
+:root {
+    --mustard: #EAB308;
+    --blue: navy;
+    --bg-color: #E7E5E4;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--bg-color);
+}
+
+#card {
+    display: flex;
+    flex-direction: column;
+
+    width: min(540px, 90%);
+    height: fit-content;
+
+    background-color: var(--mustard);
+    color: var(--blue);
+
+    padding: 1rem;
+    border-radius: 1rem;
+}
