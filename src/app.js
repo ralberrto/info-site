@@ -1,11 +1,16 @@
-const https = require('https');
+const http = require('http');
+//const https = require('https');
 const fs = require('fs');
 const path = require("path");
 
 const options = {
-	key: fs.readFileSync(path.resolve(__dirname, 'key.pem')),
-	cert: fs.readFileSync(path.resolve(__dirname, 'cert.pem')),
-};
+  hostname: 'localhost',
+  port: 8080,
+}
+//const options = {
+//	key: fs.readFileSync(path.resolve(__dirname, 'key.pem')),
+//	cert: fs.readFileSync(path.resolve(__dirname, 'cert.pem')),
+//};
 
 const respondResource = function(res, resource, contentType) {
   fs.readFile(resource, (err, data) => {
@@ -16,7 +21,7 @@ const respondResource = function(res, resource, contentType) {
   });
 };
 
-https
+http
 	.createServer(options, (req, res) => {
 		let resource;
 		switch (req.url) {
