@@ -40,6 +40,10 @@ https
         contentType = 'text/css';
         break;
       }
+      default: {
+        resource = path.resolve(__dirname, '..', 'dist/404.html');
+        contentType = 'text/html';
+      }
 		} 
     respondResource(res, resource, contentType);
 	})
